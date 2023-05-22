@@ -18,19 +18,7 @@ const Header = () => {
 	return (
 		<header className="py-2 flex justify-between border-b">
 				<h1 className="text-2xl"><a href="/">LMS</a></h1>
-				<div className="flex items-center">
-					<input
-						type="text"
-						placeholder="Search"
-						className="border border-gray-300 rounded-l-lg px-4 py-2 w-[400px] focus:outline-none focus:ring focus:border-blue-500"
-					/>
-					<button
-						type="button"
-						className="bg-blue-500 hover:bg-blue-600 text-white rounded-r-lg px-4 py-2 focus:outline-none"
-					>
-						Search
-					</button>
-				</div>
+				<SearchBar />
 				<div className="flex gap-2">
 					{!user && <><Link href="/login">Login</Link>
 					<Link href="/register">Register</Link></>}
