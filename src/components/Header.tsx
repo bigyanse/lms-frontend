@@ -2,6 +2,7 @@ import { useContext } from "react";
 
 import Link from "./Link";
 import Button from "./Button";
+import SearchBar from "./SearchBar";
 import { UserContext } from "../contexts/User";
 
 const BACKEND_BASE_URL = "https://lms-backend-v2qw.onrender.com";
