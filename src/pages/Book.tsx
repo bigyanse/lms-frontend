@@ -16,7 +16,7 @@ interface IBook {
 const Book = () => {
 	const { id } = useParams();
 
-	const [book, setBook] = useState<IBook | {}>({});
+	const [book, setBook] = useState<IBook | null>(null);
 	const [error, setError] = useState("");
 
 	useEffect(() => {
@@ -52,6 +52,7 @@ const Book = () => {
 				</div>
 			</div>}
 			{!book && <>Not Found</>}
+			{error && <>Something went wrong!</>}
 		</main>
   );
 };
