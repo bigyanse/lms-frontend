@@ -5,10 +5,18 @@ import BookMenu from "../components/BookMenu";
 
 const BACKEND_BASE_URL = "https://lms-backend-v2qw.onrender.com";
 
+interface IBook {
+	title: string;
+	description: string;
+	image: string;
+	author: string;
+	genre: string;
+};
+
 const Book = () => {
 	const { id } = useParams();
 
-	const [book, setBook] = useState({});
+	const [book, setBook] = useState<IBook | {}>({});
 	const [error, setError] = useState("");
 
 	useEffect(() => {
