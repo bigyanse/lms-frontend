@@ -6,13 +6,12 @@ import { UserContext } from "../contexts/User";
 const PrivateRoute = ({ children }: { children: ReactNode }) => {
 	const user = useContext(UserContext);
 
-	if(user) {
-		return (
-			<>{children}</>
-		);
-	} else {
-		<Navigate to="/login" />
-	}
+	return (
+		<>
+			{user && children}
+			{!user && <Navigate to="/login" />}
+		</>
+	);
 };
 
 export default PrivateRoute;
