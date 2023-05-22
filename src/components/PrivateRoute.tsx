@@ -1,4 +1,5 @@
 import { useContext, ReactNode } from "react";
+import { Navigate } from "react-router-dom";
 
 import { UserContext } from "../contexts/User";
 
@@ -10,7 +11,7 @@ const PrivateRoute = ({ children }: { children: ReactNode }) => {
 			<>{children}</>
 		);
 	} else {
-		window.location.href = "/login";
+		<Navigate to="/login" />
 	}
 };
 
