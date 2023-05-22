@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Add from "./pages/Add";
 import Edit from "./pages/Edit";
+import Search from "./pages/Search";
 import NotFound from "./pages/NotFound";
 
 const App = () => {
@@ -24,6 +25,7 @@ const App = () => {
 						<Route path="/register" element={<Register />} />
 						<Route path="/add" element={<Add />} />
 						<Route path="/book/edit/:id" element={<Edit />} />
+						<Route path="/search" element={<Search />} />
 						<Route path="*" element={<NotFound />} />
 					</Routes>
 					<footer></footer>
