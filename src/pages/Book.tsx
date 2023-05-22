@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
 import BookMenu from "../components/BookMenu";
+import BookCard from "../components/BookCard";
 
 const BACKEND_BASE_URL = "https://lms-backend-v2qw.onrender.com";
 
@@ -60,10 +61,10 @@ const Book = () => {
 				<section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-4 py-5">
 					<h2 className="text-xl">Recommended</h2>
 					<div className="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6">
-						{books.length !== 0 && books.map((book, key) => {
+						{recommendations.length !== 0 && recommendations.map((book, key) => {
 							return <BookCard key={key} book={book} />;
 						})}
-						{!books.length && <>Nothing much to recommend!</>}
+						{!recommendations.length && <>Nothing much to recommend!</>}
 					</div>
 				</section>
 			</>}
