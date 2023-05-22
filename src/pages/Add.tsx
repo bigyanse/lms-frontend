@@ -1,5 +1,7 @@
 import { useState, FormEvent } from "react";
 
+const BACKEND_BASE_URL = "https://lms-backend-v2qw.onrender.com";
+
 const Add = () => {
 	const [title, setTitle] = useState("");
 	const [image, setImage] = useState("");
@@ -12,7 +14,7 @@ const Add = () => {
 	const handleSubmit = async (event: FormEvent) => {
 		event.preventDefault();
 
-		const response = await fetch("http://localhost:5000/books/book/add", {
+		const response = await fetch(`${BACKEND_BASE_URL}/books/book/add`, {
 			method: "POST",
 			headers: {
 				"Content-type": "application/json",

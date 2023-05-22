@@ -2,13 +2,15 @@ import { useState, useEffect } from "react";
 
 import BookCard from "../components/BookCard";
 
+const BACKEND_BASE_URL = "https://lms-backend-v2qw.onrender.com";
+
 const Home = () => {
 	const [books, setBooks] = useState([]);
 	const [error, setError] = useState("");
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const response = await fetch("http://localhost:5000/books");
+			const response = await fetch(`${BACKEND_BASE_URL}/books`);
 			const data = await response.json();
 			if(data.success) {
 				setBooks(data.data.books);

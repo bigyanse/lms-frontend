@@ -3,6 +3,8 @@ import { useParams } from "react-router-dom";
 
 import BookMenu from "../components/BookMenu";
 
+const BACKEND_BASE_URL = "https://lms-backend-v2qw.onrender.com";
+
 const Book = () => {
 	const { id } = useParams();
 
@@ -11,7 +13,7 @@ const Book = () => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const response = await fetch(`http://localhost:5000/books/book/${id}`);
+			const response = await fetch(`${BACKEND_BASE_URL}/books/book/${id}`);
 			const data = await response.json();
 			if(data.success) {
 				setBook(data.data.book);

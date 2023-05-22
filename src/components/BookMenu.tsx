@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+const BACKEND_BASE_URL = "https://lms-backend-v2qw.onrender.com";
+
 const BookMenu = ({ book }: { book: any }) => {
 	const [show, setShow] = useState(false);
 
@@ -12,7 +14,7 @@ const BookMenu = ({ book }: { book: any }) => {
   };
 
 	const handleDeleteClick = async () => {
-		const response = await fetch(`http://localhost:5000/books/book/${book.id}/delete`, {
+		const response = await fetch(`${BACKEND_BASE_URL}/books/book/${book.id}/delete`, {
 			method: "DELETE"
 		});
 		const data = await response.json();

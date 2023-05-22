@@ -1,6 +1,8 @@
 import { useState, FormEvent, useEffect } from "react";
 import { useParams } from "react-router-dom";
 
+const BACKEND_BASE_URL = "https://lms-backend-v2qw.onrender.com";
+
 const Edit = () => {
 	const { id } = useParams();
 
@@ -17,7 +19,7 @@ const Edit = () => {
 	const handleSubmit = async (event: FormEvent) => {
 		event.preventDefault();
 
-		const response = await fetch(`http://localhost:5000/books/book/${id}/edit`, {
+		const response = await fetch(`${BACKEND_BASE_URL}/books/book/${id}/edit`, {
 			method: "PUT",
 			headers: {
 				"Content-type": "application/json",
@@ -40,7 +42,7 @@ const Edit = () => {
 
 	useEffect(() => {
 		const fetchData = async () => {
-			const response = await fetch(`http://localhost:5000/books/book/${id}`);
+			const response = await fetch(`${BACKEND_BASE_URL}/books/book/${id}`);
 			const data = await response.json();
 			if(data.success) {
 				setTitle(data.data.book.title);

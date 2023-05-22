@@ -4,11 +4,13 @@ import Link from "./Link";
 import Button from "./Button";
 import { UserContext } from "../contexts/User";
 
+const BACKEND_BASE_URL = "https://lms-backend-v2qw.onrender.com";
+
 const Header = () => {
 	const user = useContext(UserContext);
 
 	const logout = async () => {
-		const response = await fetch("http://localhost:5000/auth/logout", { credentials: 'include', method: "POST" });
+		const response = await fetch(`${BACKEND_BASE_URL}/auth/logout`, { credentials: 'include', method: "POST" });
 		const data = await response.json();
 		window.location = "/";
 	};

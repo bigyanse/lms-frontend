@@ -1,5 +1,7 @@
 import { useState, FormEvent } from "react";
 
+const BACKEND_BASE_URL = "https://lms-backend-v2qw.onrender.com";
+
 const Register = () => {
 	const [email, setEmail] = useState("");
 	const [password, setPassword] = useState("");
@@ -18,7 +20,7 @@ const Register = () => {
 			return;
 		}
 
-		const response = await fetch("http://localhost:5000/auth/register", {
+		const response = await fetch(`${BACKEND_BASE_URL}/auth/register`, {
 			method: "POST",
 			headers: {
 				"Content-type": "application/json",
