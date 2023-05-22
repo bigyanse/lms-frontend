@@ -9,6 +9,8 @@ const Add = () => {
 	const [author, setAuthor] = useState("");
 	const [genre, setGenre] = useState("");
 
+	document.title = "Add Book | LMS";
+
 	const [message, setMessage] = useState({ type: "", content: "" });
 
 	const handleSubmit = async (event: FormEvent) => {

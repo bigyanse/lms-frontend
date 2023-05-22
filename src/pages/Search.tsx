@@ -15,6 +15,8 @@ const Search = () => {
 	const [error, setError] = useState("");
 
 	useEffect(() => {
+		document.title = `Search '${query}' - LMS`;
+
 		const fetchData = async () => {
 			const response = await fetch(`${BACKEND_BASE_URL}/books/search?q=${query}`);
 			const data = await response.json();
@@ -27,8 +29,6 @@ const Search = () => {
 
 		fetchData();
 	}, []);
-
-
 
 	return (
 		<main>

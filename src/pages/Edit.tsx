@@ -41,6 +41,8 @@ const Edit = () => {
 	};
 
 	useEffect(() => {
+		document.title = "Edit Book - LMS";
+
 		const fetchData = async () => {
 			const response = await fetch(`${BACKEND_BASE_URL}/books/book/${id}`);
 			const data = await response.json();

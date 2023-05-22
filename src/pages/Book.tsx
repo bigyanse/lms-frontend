@@ -25,6 +25,7 @@ const Book = () => {
 			const data = await response.json();
 			if(data.success) {
 				setBook(data.data.book);
+				document.title = `${data.data.book.title} - LMS`;
 			} else {
 				setError("Error fetching book!");
 			}

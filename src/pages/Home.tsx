@@ -9,6 +9,8 @@ const Home = () => {
 	const [error, setError] = useState("");
 
 	useEffect(() => {
+		document.title = "LMS - Learning Management System";
+
 		const fetchData = async () => {
 			const response = await fetch(`${BACKEND_BASE_URL}/books`);
 			const data = await response.json();

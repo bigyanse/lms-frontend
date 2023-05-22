@@ -1,4 +1,6 @@
 const NotFound = () => {
+	document.title = "Not Found - LMS";
+
 	return (
 		<main>
 			Not Found

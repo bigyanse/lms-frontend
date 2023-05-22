@@ -7,6 +7,8 @@ const Login = () => {
 	const [password, setPassword] = useState("");
 	const [error, setError] = useState("");
 
+	document.title = "Login - LMS";
+
 	const handleSubmit = async (event: FormEvent) => {
 		event.preventDefault();
 
