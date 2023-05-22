@@ -10,6 +10,7 @@ import Register from "./pages/Register";
 import Add from "./pages/Add";
 import Edit from "./pages/Edit";
 import Search from "./pages/Search";
+import PrivateRoute from "./components/PrivateRoute";
 import NotFound from "./pages/NotFound";
 
 const App = () => {
@@ -23,8 +24,10 @@ const App = () => {
 						<Route path="/book/:id" element={<Book />} />
 						<Route path="/login" element={<Login />} />
 						<Route path="/register" element={<Register />} />
-						<Route path="/add" element={<Add />} />
-						<Route path="/book/edit/:id" element={<Edit />} />
+
+						<Route path="/add" element={<PrivateRoute><Add /></PrivateRoute>} />
+						<Route path="/book/edit/:id" element={<PrivateRoute><Edit /></PrivateRoute>} />
+
 						<Route path="/search" element={<Search />} />
 						<Route path="*" element={<NotFound />} />
 					</Routes>
