@@ -12,7 +12,7 @@ const Header = () => {
 	const logout = async () => {
 		const response = await fetch(`${BACKEND_BASE_URL}/auth/logout`, { credentials: 'include', method: "POST" });
 		const data = await response.json();
-		window.location = "/";
+		if(data.success) window.location.href = "/";
 	};
 
 	return (
