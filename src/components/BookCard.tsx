@@ -1,4 +1,4 @@
-import Link from "./Link";
+import LinkButton from "./LinkButton";
 
 const BookCard = ({ book } : { book: any }) => {
   return (
@@ -12,7 +12,7 @@ const BookCard = ({ book } : { book: any }) => {
 					<p className="text-gray-500">{book.author}</p>
 				</div>
 				<div>
-					<Link href={`/book/${book.id}`}>Info</Link>
+					<LinkButton href={`/book/${book.id}`}>Info</LinkButton>
 				</div>
       </div>
     </div>

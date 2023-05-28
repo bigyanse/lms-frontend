@@ -1,6 +1,6 @@
 import { useContext } from "react";
 
-import Link from "./Link";
+import LinkButton from "./LinkButton";
 import Button from "./Button";
 import SearchBar from "./SearchBar";
 import { UserContext } from "../contexts/User";
@@ -21,9 +21,9 @@ const Header = () => {
 				<h1 className="text-2xl"><a href="/">LMS</a></h1>
 				<SearchBar />
 				<div className="flex gap-2">
-					{!user && <><Link href="/login">Login</Link>
-					<Link href="/register">Register</Link></>}
-					{user && <Link href="/add">Add</Link>}
+					{!user && <><LinkButton href="/login">Login</LinkButton>
+					<LinkButton href="/register">Register</LinkButton></>}
+					{user && <LinkButton href="/add">Add</LinkButton>}
 					{user && <Button onClick={logout}>Logout</Button>}
 				</div>
 			</header>
