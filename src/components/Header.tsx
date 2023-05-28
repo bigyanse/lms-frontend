@@ -1,4 +1,5 @@
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 import LinkButton from "./LinkButton";
 import Button from "./Button";
@@ -18,7 +19,7 @@ const Header = () => {
 
 	return (
 		<header className="py-2 flex justify-between border-b">
-				<h1 className="text-2xl"><a href="/">LMS</a></h1>
+				<h1 className="text-2xl"><Link to="/">LMS</Link></h1>
 				<SearchBar />
 				<div className="flex gap-2">
 					{!user && <><LinkButton href="/login">Login</LinkButton>
